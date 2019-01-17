@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Editor</title>
+<link rel="stylesheet" href="d:\Users\sf51\Desktop\Lab Exercise\Dec29\style.css">
+</head>
+<script>
+
+	styleList="";
+	function fun(){
+		var a=document.getElementById("textdecor");
+		var b=document.getElementById("main");
+		if(b.value==="")
+		{
+			alert("Enter Text in TextArea");
+			return;
+		}
+		if(a.selectedIndex===1)
+			styleList+="font-weight: bold;";
+		else if(a.selectedIndex===2)
+			styleList+="font-style: italic;";
+		else if(a.selectedIndex===3)
+			styleList+="text-decoration: underline;";
+			b.style=styleList;
+			a.selectedIndex=0;
+	}
+		function fun1(){
+		var a=document.getElementById("fontfamily");
+		var b=document.getElementById("main");
+				if(b.value==="")
+		{
+			alert("Enter Text in TextArea");
+			return;
+		}
+		if(a.selectedIndex===1)
+			styleList+="font-family: arial;";
+		else if(a.selectedIndex===2)
+			styleList+="font-family: tahoma;";
+		else if(a.selectedIndex===3)
+			styleList+="font-family: georgia;";
+			b.style=styleList;
+			a.selectedIndex=0;
+	}
+	function fun2(){
+		var a=document.getElementById("fontsize");
+		var b=document.getElementById("main");
+				if(b.value==="")
+		{
+			alert("Enter Text in TextArea");
+			return;
+		}
+		if(a.selectedIndex===1)
+			styleList+="font-size: 10px;";
+		else if(a.selectedIndex===2)
+			styleList+="font-size: 20px;";
+		else if(a.selectedIndex===3)
+			styleList+="font-size: 30px;";
+		else if(a.selectedIndex===4)
+			styleList+="font-size: 40px;";
+			b.style=styleList;
+			a.selectedIndex=0;
+	}
+		function fun3(){
+		var a=document.getElementById("fontcolor");
+		var b=document.getElementById("main");
+				if(b.value==="")
+		{
+			alert("Enter Text in TextArea");
+			return;
+		}
+		if(a.selectedIndex===1)
+			styleList+="color: red;";
+		else if(a.selectedIndex===2)
+			styleList+="color: blue;";
+		else if(a.selectedIndex===3)
+			styleList+="color: orange;";
+		else if(a.selectedIndex===4)
+			styleList+="color: green;";
+			b.style=styleList;
+			a.selectedIndex=0;
+	}
+			function fun4(){
+		var a=document.getElementById("spchars");
+		var b=document.getElementById("main").value;
+				if(b==="")
+		{
+			alert("Enter Text in TextArea");
+			return;
+		}
+		if(a.selectedIndex===1)
+			{
+			c=a[1].value;
+			b+=c;
+			}
+		else if(a.selectedIndex===2)
+			{
+			c=a[2].value;
+			b+=c;
+			}
+		else if(a.selectedIndex===3)
+			{
+			c=a[3].value;
+			b+=c;
+			}
+		else if(a.selectedIndex===4)
+			{
+			c=a[4].value;
+			b+=c;
+			}
+		document.getElementById("main").value=b;
+		a.selectedIndex=0;
+	}
+	function fun5(){
+		var a=document.getElementById("align");
+		var b=document.getElementById("main");
+				if(b.value==="")
+		{
+			alert("Enter Text in TextArea");
+			return;
+		}
+		if(a.selectedIndex===1)
+			styleList+="text-align: left;";
+		else if(a.selectedIndex===2)
+			styleList+="text-align: right;";
+		else if(a.selectedIndex===3)
+			styleList+="text-align: center;";
+		else if(a.selectedIndex===4)
+			styleList+="text-align: justify;";
+			b.style=styleList;
+			a.selectedIndex=0;
+	}
+</script>
+<body style="background-color: lightblue;">
+
+<textarea class="maintext" id="main" placeholder="Enter Text..."></textarea>
+<label>Text-Decoration</label>
+<select onclick="fun()" id="textdecor">
+<option selected>-</option>
+<option>Bold</option>
+<option>Italic</option>
+<option>Underline</option>
+</select>
+<label>Font-Family</label>
+<select onclick="fun1()" id="fontfamily">
+<option selected>-</option>
+<option>Arial</option>
+<option>Tahoma</option>
+<option>Georgia</option>
+</select>
+<label>Font-Size</label>
+<select onclick="fun2()" id="fontsize">
+<option selected>-</option>
+<option>10px</option>
+<option>20px</option>
+<option>30px</option>
+<option>40px</option>
+</select>
+<label>Font-Color</label>
+<select onclick="fun3()" id="fontcolor">
+<option selected>-</option>
+<option>Red</option>
+<option>Blue</option>
+<option>Orange</option>
+<option>Green</option>
+</select>
+<label>Special-Characters</label>
+<select onclick="fun4()" id="spchars">
+<option selected>-</option>
+<option>&cent</option>
+<option>&copy</option>
+<option>&yen</option>
+<option>&pound</option>
+</select>
+<label>Align</label>
+<select onclick="fun5()" id="align">
+<option selected>-</option>
+<option>Left</option>
+<option>Right</option>
+<option>Center</option>
+<option>Justify</option>
+</select>
+<center><button onclick="document.getElementById('main').style='';styleList=''" style="margin-top: 20px;">Reset to Defaults</button></center>
+</body>
+</html>

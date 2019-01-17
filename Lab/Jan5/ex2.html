@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>Table</title>
+<script src="d:\Users\sf51\Desktop\Lab Exercise\jquery\jq.js"></script>
+</head>
+<script type="text/javascript" language="javascript">
+var id=0;
+$(document).ready(function() {
+$(".btn1").click(function () {
+var a,b,c;
+a=document.getElementById("roll").value;
+b=document.getElementById("name").value;
+c=document.getElementById("age").value;
+var str;
+id=id+1;
+str="<tr id='"
+str+=id;
+str+="'><td>";
+str+=a;
+str+="</td>";
+str+="<td>";
+str+=b;
+str+="</td>";
+str+="<td>";
+str+=c;
+str+="</td>";
+str+="</tr>";
+$("table").append(str);
+document.getElementById("roll").value="";
+document.getElementById("name").value="";
+document.getElementById("age").value="";
+});
+$(".btn2").click(function () {
+var str1;
+str1="#";
+str1+=id;
+$(str1).remove();
+id=id-1;
+});
+});
+</script>
+<body>
+<table border="2" bgcolor="lightgreen">
+<tr>
+<th>Roll No</th>
+<th>Name</th>
+<th>Age</th>
+</tr>
+</table>
+<br>
+<label>Enter RollNo</label>
+<input type="text" id="roll">
+<br>
+<label>Enter Name</label>
+<input type="text" id="name">
+<br>
+<label>Enter Age</label>
+<input type="text" id="age">
+<br>
+<button class="btn1">Add</button>
+<button class="btn2">Remove</button>
+</body>
+</html>

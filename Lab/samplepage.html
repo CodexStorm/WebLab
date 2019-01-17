@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<head>
+<title>CSS</title>
+</head>
+<!--Internal -->
+<style>
+.main{
+	position: absolute;
+	margin-top: 125px;
+	margin-left: 100px;
+	margin-right: 100px;
+	background-color: #666666;
+	font-family: Georgia, times, serif;
+	overflow: scroll;
+	
+	
+}
+.content{
+	background-color: white;
+}
+ul{
+	positon: relative;
+	 list-style-type: none;
+	 font-size: 15px;
+	padding: 5px 0px 5px 30px;
+}
+li{
+	display: inline;
+	margin-right: 40px;
+		
+}
+a{
+	text-decoration: none;
+	cursor: pointer;
+}
+.active{
+	background-color: black;
+	color: white;
+}
+li a:hover{
+	
+	color: white;
+	background-color: black;
+}
+.image1{
+	height: 150px;
+	width: 300px;
+	background-color: green;
+	margin-left: 200px;
+	border: solid;
+	border-size: 10px;
+	border-radius: 5%;
+}
+.total{
+	display: inline;
+}
+h2{
+	font-size: 30px;
+	color: brown;
+}
+p{
+	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 20px;
+	text-indent: 100px;
+}
+.model1{
+	position: absolute;
+	width: 500px;
+	height: 500px;
+	display: none;
+	background-color: blue;
+	margin-left: 25%;
+	margin-top: 35%;
+	z-index: 2;
+}
+.model2{
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	display: none;
+	background-color: green;
+	margin-left: 35%;
+	margin-top: 25%;
+	z-index: 3;
+}
+</style>
+<script>
+function fun(){
+		document.getElementById("model1").style="display: block";
+		document.getElementById("model2").style="display: block";
+}
+function fun1(){
+		document.getElementById("model1").style="display: none";
+		document.getElementById("model2").style="display: none";
+}
+function crawl(){  
+	var data=document.getElementById("para1").innerHTML;
+	var list=data.split(" ");
+	var stopList=["the","is","of","for","that",",",".","this","a","them","to","but","in","are","they"];
+	var mp={},mp1={},mp2={};
+	var i=0;
+	for(i=0;i<stopList.length;i++)
+	{
+		mp1[stopList[i].toLowerCase()]=1;
+	}
+	for(i=0;i<list.length;i++){
+		mp[list[i].toLowerCase()]=0;
+	}
+	for(i=0;i<list.length;i++)
+	{
+		if(mp1[list[i].toLowerCase()]===1)
+		{
+			continue;
+		}
+		else{
+			mp[list[i].toLowerCase()]+=1;
+			mp2[list[i].toLowerCase()]=mp[list[i].toLowerCase()]
+		}
+	}
+	var ansList=[];
+	for(var ele in mp2){
+		ansList.push(mp2[ele]+" "+ele);
+	}
+	ansList.sort();
+	var newlist;
+	str="<table bgcolor='lightgreen' border=\"3\" width=\"100%\">";
+	str+="<tr>";
+	str+="<td>Word</td>";
+	str+="<td>Count</td>";
+	str+="</tr>";
+	for(i=ansList.length-1;i>=0;i--)
+	{
+		newlist=ansList[i].split(" ");
+		str+="<tr>"
+		str+="<td>"+newlist[1]+"</td>";
+		str+="<td>"+newlist[0]+"</td>";
+		str+="</tr>";
+	}
+	str+="</table>";
+	document.getElementById("mai").innerHTML.style="display: none;";
+	document.write(str);
+	}
+</script>
+<body bgcolor="wood">
+<div class="main" id="mai">
+<h1 style="color: white; font-size: 30px; padding-right: 500px; padding-top: 10px;">ONLINE ACADEMY</h1>
+<em><h3 style="color: white; font-size: 15px; padding-right: 500px; padding-top: 0px;">A learning portal</h3></em>
+<div style="background-color: lightgrey">
+<ul>
+<li class="active"><a>Home</a></li>
+<li><a>Courses</a></li>
+<li><a>Contact</a></li>
+</ul>
+</div>
+<div class="content">
+<br>
+<h2>Course I</h2>
+<p id="para1">
+HTML5 introduces a new set of elements that allow you to divide up the parts of a page . The names of these elements indicate the kind of content you will find in them . They are still subject to change , but that has not stopped many web page authors using them already
+</p>
+<div class="image1"></div>
+<br>
+<h2>Course II</h2>
+<p>
+HTML5 introduces a new set of elements that allow you to divide up the
+parts of a page. The names of these elements indicate the kind of content
+you will find in them. They are still subject to change, but that has not
+stopped many web page authors using them already
+</p>
+<div class="image1" style="background-color: pink;"></div>
+<br>
+</div>
+<button onclick="fun()">Show OverLay Effect</button>
+<button onclick="fun1()">Hide OverLay Effect</button>
+<button onclick="crawl()">Crawl</button>
+</div>
+
+<div class="model1" id="model1">
+</div>
+<div class="model2" id="model2">
+</div>
+</body>
+</html>

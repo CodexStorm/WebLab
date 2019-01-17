@@ -1,0 +1,11 @@
+a{
+	color: white;
+	font-size: 20px;
+	background-color: green;
+	text-decoration: none;
+	cursor: pointer;
+}
+a:hover{
+	background-color: black;
+	color: white;
+}

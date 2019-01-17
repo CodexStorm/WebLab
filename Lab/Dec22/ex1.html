@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Crawler</title>
+</head>
+<script>
+function createRequest(){
+ var ajaxRequest; 
+ try{
+ ajaxRequest = new XMLHttpRequest(); 
+}
+catch (e){
+try{
+ ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+}
+catch (e) {
+try{
+ ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+}
+catch (e){
+ return false;
+}
+}
+}
+ return ajaxRequest;
+}
+function crawl(url){
+	var req= createRequest();
+	
+	if(req!=false){
+		req.onreadystatechange= function(){
+			if(req.readyState==4){
+				if((req.status==200)||(req.status==0)){
+					console.log("HERE");
+					console.log("req.responseText");
+				}
+				else{
+					window.alert("Request Error Inside");
+				}
+			}
+		}
+	}
+	else{
+		window.alert("Request Error");
+	}
+	req.open('GET',url,true);
+
+	req.send(null);
+}
+
+</script>
+<body>
+
+<button onclick="crawl('file:///D:/Users/sf51/Desktop/Lab%20Exercise/Jan5/data.json')">Click to crawl!!</button>
+<div id="msg">
+</div>
+
+</body>
+</html>

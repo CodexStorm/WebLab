@@ -1,0 +1,9 @@
+.maintext{
+	width: 100%;
+	height: 500px;
+}
+
+label{
+	font-weight: bold;
+	margin-left: 10px;
+}

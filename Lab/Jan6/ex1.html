@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Form</title>
+<script src="d:\Users\sf51\Desktop\Lab Exercise\jquery\jq.js"></script>
+<script>
+$(function(){
+	$("#age").keyup(function(){
+		if($("#age").val().length>0)
+			$("#btn1").prop("disabled",false);
+		else
+			$("#btn1").prop("disabled",true);
+	});
+});
+</script>
+</head>
+<style>
+input{
+	margin-left: 20px;
+	margin-top: 10px;
+}
+</style>
+<body>
+<form>
+<label>Enter Name</label>
+<input id="name" type="text"><br>
+<label>Enter Password</label>
+<input id="age" type="text"><span style="color: red">*</span><br>
+<button id="btn1" disabled>Submit</button>
+</form>
+</body>
+</html>

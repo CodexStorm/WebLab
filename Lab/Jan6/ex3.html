@@ -1,0 +1,23 @@
+<html>
+<body>
+<p id="title"></p><br>
+<p id="author"></p><br>
+<p id="year"></p>
+<script>
+var text, parser, xmlDoc;
+text = "<bookstore><book>" +
+"<title>Harry Potter</title>" +
+"<author>J.K.Rowling</author>" +
+"<year>2005</year>" +
+"</book></bookstore>";
+parser = new DOMParser();
+xmlDoc = parser.parseFromString(text,"text/xml");
+document.getElementById("title").innerHTML =
+xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+document.getElementById("author").innerHTML =
+xmlDoc.getElementsByTagName("author")[0].childNodes[0].nodeValue;
+document.getElementById("year").innerHTML =
+xmlDoc.getElementsByTagName("year")[0].childNodes[0].nodeValue;
+</script>
+</body>
+</html>  

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Decrypt</title>
+</head>
+
+<script>
+function fun(){
+
+		var data=document.getElementById("data").value;
+		
+		var sample=data;
+		
+		var ans="";
+		mp={
+			'a': 'c',
+			'b': 'd',
+			'c': 'e',
+			'd': 'f',
+			'e': 'g',
+			'f': 'h',
+			'g': 'i',
+			'h': 'j',
+			'i': 'k',
+			'j': 'l',
+			'k': 'm',
+			'l': 'n',
+			'm': 'o',
+			'n': 'p',
+			'o': 'q',
+			'p': 'r',
+			'q': 's',
+			'r': 't',
+			's': 'u',
+			't': 'v',
+			'u': 'w',
+			'v': 'x',
+			'w': 'y',
+			'x': 'z',
+			'y': 'a',
+			'z': 'b'
+		}
+		for(i=0;i<sample.length;i++)
+		{
+			ans+=mp[sample[i]];
+		}
+		document.getElementById("encrypt").innerHTML=ans;
+		document.getElementById("dec").innerHTML.style="display: block;";
+}
+function decrypt(){
+			var data=document.getElementById("encrypt").innerHTML;
+			
+		var sample=data;
+		
+		var ans="";
+		mp={
+			'c': 'a',
+			'd': 'b',
+			'e': 'c',
+			'f': 'd',
+			'g': 'e',
+			'h': 'f',
+			'i': 'g',
+			'j': 'h',
+			'k': 'i',
+			'l': 'j',
+			'm': 'k',
+			'n': 'l',
+			'o': 'm',
+			'p': 'n',
+			'q': 'o',
+			'r': 'p',
+			's': 'q',
+			't': 'r',
+			'u': 's',
+			'v': 't',
+			'w': 'u',
+			'x': 'v',
+			'y': 'w',
+			'z': 'x',
+			'a': 'y',
+			'b': 'z'
+		}
+		for(i=0;i<sample.length;i++)
+		{
+			ans+=mp[sample[i]];
+		}
+		document.getElementById("decrypt").innerHTML=ans;
+}
+</script>
+<body>
+
+
+<label>Enter Name</label>
+<input type="text" id="name" placeholder="Enter Name..." required>
+<br>
+<label>Enter Data to be encrypted</label>
+<input type="text" id="data" placeholder="Enter Data..." required>
+<button id="submit" onclick="fun()">Encrypt</button>
+<h1>Encrypted Form is</h1>
+<p id="encrypt"></p>
+<button id="dec" onclick="decrypt()">Decrypt</button>
+<h1>Decrypted Form is </h1>
+<p id="decrypt"></p>
+</body>
+</html>

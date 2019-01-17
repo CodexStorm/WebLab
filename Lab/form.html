@@ -1,0 +1,34 @@
+<!DOCTYPE HTML5>
+<html>
+<head>
+	<title>Form</tit  le 
+</head>
+<script>
+function check(id1,id2){
+	var a=document.getElementById(id1).value;
+	var b=document.getElementById(id2).value;
+	if(a===b)
+		window.alert("Entered Passwords are similar");
+	else
+		window.alert("Password Mismatch");
+}
+</script>
+<body style="background-color: skyblue;" >
+<h3 style="margin-top: 20%"><center><em>Form</em></center></h3>
+<form action="form.html" onsubmit="check('pass1','pass2')">
+<fieldset style="margin-right: 400px;margin-left:400px;">
+<label>Enter Username</label><br>
+<input type="text"  id="user" required></input>
+<br>
+<label>Enter Password</label><br>
+<input type="password"  id="pass1" required></input>
+<br>
+<label>Confirm Password</label><br>
+<input type="password"  id="pass2" required></input>
+<br>
+<center><button type="submit"  style="margin-top: 10px; background-color: green; color: white;"><strong>Submit</strong></button></center>
+</fieldset>
+</form>
+
+</body>
+</html>

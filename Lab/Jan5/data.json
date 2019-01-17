@@ -1,0 +1,27 @@
+[
+{
+"rollno": "1000",
+"name": "ABC",
+"department": "CSE"
+},
+{
+"rollno": "5001",
+"name": "DEF",
+"department": "ECE"
+},
+{
+"rollno": "6000",
+"name": "GHI",
+"department": "EEE"
+},
+{
+"rollno": "8000",
+"name": "XYZ",
+"department": "MECH"
+},
+{
+"rollno":"9000",
+"name": "RTY",
+"department": "CIVIL"
+}
+]
